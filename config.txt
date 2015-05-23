@@ -96,11 +96,11 @@ temperature_control.bed.thermistor           EPCOS100K        # http://smoothiew
 #temperature_control.bed.beta                4066             # or set the beta value
 
 temperature_control.bed.set_m_code           140              #
-temperature_control.bed.set_and_wait_m_code  50               #
+temperature_control.bed.set_and_wait_m_code  190              #
 temperature_control.bed.designator           B                #
-# uncomment followng to use bang bang isntead of PID for the bed (best for relay conrolled hotbeds)
-temperature_control.bed.bang_bang            true             # set to true to use bang bang control rather than PID
-temperature_control.bed.hysteresis           2.0              # set to the temperature in degrees C to use as hysteresis when using bang bang
+# uncomment followng to use bang bang instead of PID for the bed (best for relay controlled hotbeds)
+#temperature_control.bed.bang_bang            true             # set to true to use bang bang control rather than PID
+#temperature_control.bed.hysteresis           2.0              # set to the temperature in degrees C to use as hysteresis when using bang bang
 
 # Switch module for fan control
 switch.fan.enable                            true             #
