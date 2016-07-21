@@ -8,13 +8,13 @@ M205 X0.10000 Z-1.00000 S0.00000
 ;Max feedrates in mm/sec, XYZ cartesian, ABC actuator:
 M203 X250.00000 Y250.00000 Z250.00000 A250.00000 B250.00000 C250.00000
 ;Optional arm solution specific settings:
-M665 L288.2800 R170.8413
+M665 L288.2800 R171.1382
 ;Motor currents:
 M907 X0.80000 Y0.80000 Z0.80000 E0.50000 
 ;Home offset (mm):
 M206 X0.00 Y0.00 Z0.20
 ;Trim (mm):
-M666 X-1.268 Y-0.994 Z-0.063
+M666 X-1.800 Y-1.276 Z-0.305
 ;Max Z
 M665 Z233.000
 ;E Steps per mm:

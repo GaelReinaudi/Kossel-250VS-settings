@@ -143,16 +143,25 @@ beta_trim                                    0                 # software trim f
 gamma_trim                                   0                 # software trim for gamma stepper endstop (in mm)
 
 # optional Z probe http://smoothieware.org/zprobe
-zprobe.enable                                true            # set to true to enable a zprobe
-zprobe.probe_pin                             1.29!^          # pin probe is attached to if NC remove the !
-zprobe.slow_feedrate                         5               # mm/sec probe feed rate
-#zprobe.debounce_count                       100             # set if noisy
-zprobe.fast_feedrate                         40              # move feedrate
-zprobe.probe_height                          5               # how much above bed to start probe
+zprobe.enable                                true          # set to true to enable a zprobe
+zprobe.probe_pin                             1.29!^        # pin probe is attached to if NC remove the !
+zprobe.slow_feedrate                         5             # mm/sec probe feed rate
+#zprobe.debounce_count                       100           # set if noisy
+zprobe.fast_feedrate                         40            # move feedrate
+zprobe.probe_height                          5             # how much above bed to start probe
+zprobe.return_feedrate                       150           # feedrate after a probe, default 0 is double of slow_feedrate (mm/s)
 
 # associated with zprobe the leveling strategy to use
 leveling-strategy.delta-calibration.enable   true            # basic delta calibration
-leveling-strategy.delta-calibration.radius   100             # the probe radius
+leveling-strategy.delta-calibration.radius   120             # the probe radius
+leveling-strategy.delta-grid.enable         true
+leveling-strategy.delta-grid.radius        120
+leveling-strategy.delta-grid.size        7
+leveling-strategy.delta-grid.do_home         true
+#leveling-strategy.ZGrid-leveling.enable         true
+#leveling-strategy.ZGrid-leveling.bed_x           100
+#leveling-strategy.ZGrid-leveling.bed_y           100
+#leveling-strategy.ZGrid-leveling.slow_feedrate  100
 
 # Pause button
 kill_button_enable                           true             #
