@@ -1,4 +1,4 @@
-; Homing file for RepRapFirmware on Mini Kossel
+; Homing file for RepRapFirmware on Kossel 250 V-Slot BSE
 G91							; use relative positioning
 ;******* Change F250 in the following line to F2500 when you are finished commissioning
 ;******* Change 320 in the following to a higher value if your Kossel has taller towers
