@@ -37,7 +37,9 @@ M566 X1200 Y1200 Z1200 E300		; Maximum instant speed changes mm/minute
 M106 P1 T50 S255 H1
 
 ; Thermistors
-M305 P0 T100000 B3950 R4700 H-97 L54	; Put your own H and/or L values here to set the bed thermistor ADC correction
+;M305 P0 T100000 B3950 R4700 H0 L0	; Put your own H and/or L values here to set the bed thermistor ADC correction
+M305 P0 T100000 B4250 R4700 H0 L0	; Put your own H and/or L values here to set the bed thermistor ADC correction
+;M305 P1 T100000 B4388 R4700 H-97 L54	; Put your own H and/or L values here to set the first nozzle thermistor ADC correction
 M305 P1 T100000 B4388 R4700 H-97 L54	; Put your own H and/or L values here to set the first nozzle thermistor ADC correction
 M305 P2 T100000 B4388 R4700 H0 L0	; Put your own H and/or L values here to set the second nozzle thermistor ADC correction
 M570 S180				; Hot end may be a little slow to heat up so allow it 180 seconds
@@ -59,7 +61,7 @@ M92 E820:820                       	; Set extruder steps per mm
 
 ; Z probe and compensation definition
 ;*** If you have a switch instead of an IR probe, change P1 to P4 in the following M558 command
-M558 P5 X0 Y0 Z0 H5 I1 				; Z probe is a switch and is not used for homing any axes
+M558 P5 X0 Y0 Z0 H1 I1 				; Z probe is a switch and is not used for homing any axes
 G31 X0 Y0 Z-.20 P500				; .13 more smooshed .16 less smooshed
 
 ;*** If you are using axis compensation, put the figures in the following command
