@@ -5,20 +5,30 @@
 M561 ; clear any bed transform
 ; Probe the bed at 6 peripheral and 6 halfway points, and perform 6-factor auto compensation
 ; Before running this, you should have set up your Z-probe trigger height to suit your build, in the G31 command in config.g.
-G30 P0 X0 Y119.9 H0 Z-99999
-G30 P1 X103.84 Y59.95 H0 Z-99999
-G30 P2 X103.84 Y-59.95 H0 Z-99999
-G30 P3 X0 Y-119.9 H0 Z-99999
-G30 P4 X-103.84 Y-59.95 H0 Z-99999
-G30 P5 X-103.84 Y59.95 H0 Z-99999
-G30 P6 X0 Y59.9 H0 Z-99999
-G30 P7 X51.88 Y29.95 H0 Z-99999
-G30 P8 X51.88 Y-29.95 H0 Z-99999
-G30 P9 X0 Y-59.9 H0 Z-99999
-G30 P10 X-51.88 Y-29.95 H0 Z-99999
-G30 P11 X-51.88 Y29.95 H0 Z-99999
-G30 P12 X0 Y0 H0 Z-99999 S6
+
+G28 ; home the printer
+
+; The first time the mechanical probe is used after deployment, it gives slightly different results.
+; So do an extra dummy probe here. The value stored gets overwritten later. You can remove this if you use an IR probe.
+G30 P0 X0 Y0 Z-99999
+
+G30 P0 X-86.60 Y-50.00 Z-99999
+G30 P1 X0.00 Y-100.00 Z-99999
+G30 P2 X86.60 Y-50.00 Z-99999
+G30 P3 X86.60 Y50.00 Z-99999
+G30 P4 X0.00 Y100.00 Z-99999
+G30 P5 X-86.60 Y50.00 Z-99999
+G30 P6 X-43.30 Y-25.00 Z-99999
+G30 P7 X0.00 Y-50.00 Z-99999
+G30 P8 X43.30 Y-25.00 Z-99999
+G30 P9 X43.30 Y25.00 Z-99999
+G30 P10 X0.00 Y50.00 Z-99999
+G30 P11 X-43.30 Y25.00 Z-99999
+G30 P12 X0 Y0 Z-99999 S6
+
 ; Use S-1 for measurements only, without calculations. Use S4 for endstop heights and Z-height only. Use S6 for full 6 factors
 ; If your Z probe has significantly different trigger heights depending on XY position, adjust the H parameters in the G30 commands accordingly. The value of each H parameter should be (trigger height at that XY position) - (trigger height at centre of bed)
 
+G29 ; mesh compensation no homing should be done after that (because it would compensate for homing inaccuracy !
 
+G1 X0 Y0 Z200 F5000          ; get the head out of the way of the bed
