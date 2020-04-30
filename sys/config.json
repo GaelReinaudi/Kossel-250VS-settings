@@ -1,7 +1,7 @@
 {
     "board": "duetwifi10",
     "expansion_boards": [],
-    "firmware": 2.03,
+    "firmware": 3,
     "standalone": true,
     "nvram": false,
     "auto_save": {
@@ -34,12 +34,12 @@
             210,
             200
         ],
-        "delta_radius": 105.6,
-        "homed_height": 250,
+        "delta_radius": 170.992,
+        "homed_height": 226.426,
         "low_dive_height": true,
         "max_carriage_travel": 260,
-        "print_radius": 85,
-        "rod_length": 215,
+        "print_radius": 120,
+        "rod_length": 288.28,
         "z_min": 0
     },
     "drives": [
@@ -56,7 +56,7 @@
             "driver_v3": "0.0",
             "endstop_pin": "xstop",
             "endstop_type": 1,
-            "endstop_location": 1
+            "endstop_location": 2
         },
         {
             "direction": 1,
@@ -71,7 +71,7 @@
             "driver_v3": "0.1",
             "endstop_pin": "ystop",
             "endstop_type": 1,
-            "endstop_location": 1
+            "endstop_location": 2
         },
         {
             "direction": 1,
@@ -84,16 +84,16 @@
             "current": 1000,
             "driver": 2,
             "driver_v3": "0.2",
-            "endstop_pin": null,
+            "endstop_pin": "zstop",
             "endstop": null,
             "endstop_type": 1,
-            "endstop_location": 1
+            "endstop_location": 2
         },
         {
             "direction": 1,
             "microstepping": 16,
             "microstepping_interpolation": true,
-            "steps_per_mm": 545.67,
+            "steps_per_mm": 663,
             "instant_dv": 20,
             "max_speed": 20,
             "acceleration": 1000,
@@ -115,7 +115,7 @@
     "probe": {
         "type": "effector",
         "recovery_time": 0.4,
-        "trigger_height": 0.2,
+        "trigger_height": -0.2,
         "trigger_value": 5,
         "x_offset": 0,
         "y_offset": 0,
@@ -124,32 +124,62 @@
         "points": [
             {
                 "x": 0,
-                "y": 84.9,
+                "y": 119.9,
                 "z": 0
             },
             {
-                "x": 73.53,
-                "y": -42.45,
+                "x": 103.84,
+                "y": 59.95,
                 "z": 0
             },
             {
-                "x": -73.53,
-                "y": -42.45,
+                "x": 103.84,
+                "y": -59.95,
                 "z": 0
             },
             {
                 "x": 0,
-                "y": 42.4,
+                "y": -119.9,
                 "z": 0
             },
             {
-                "x": 36.72,
-                "y": -21.2,
+                "x": -103.84,
+                "y": -59.95,
                 "z": 0
             },
             {
-                "x": -36.72,
-                "y": -21.2,
+                "x": -103.84,
+                "y": 59.95,
+                "z": 0
+            },
+            {
+                "x": 0,
+                "y": 59.9,
+                "z": 0
+            },
+            {
+                "x": 51.88,
+                "y": 29.95,
+                "z": 0
+            },
+            {
+                "x": 51.88,
+                "y": -29.95,
+                "z": 0
+            },
+            {
+                "x": 0,
+                "y": -59.9,
+                "z": 0
+            },
+            {
+                "x": -51.88,
+                "y": -29.95,
+                "z": 0
+            },
+            {
+                "x": -51.88,
+                "y": 29.95,
                 "z": 0
             },
             {
@@ -188,7 +218,7 @@
             "channel": 0,
             "sensor": 0,
             "output_pin": "bedheat",
-            "sensor_type": "thermistor",
+            "sensor_type": "pt1000",
             "sensor_pin": "bedtemp"
         },
         {
@@ -203,7 +233,7 @@
             "channel": 1,
             "sensor": 1,
             "output_pin": "e0heat",
-            "sensor_type": "thermistor",
+            "sensor_type": "pt1000",
             "sensor_pin": "e0temp"
         }
     ],
@@ -231,10 +261,10 @@
     ],
     "compensation_x_offset": 15,
     "compensation_y_offset": 15,
-    "peripheral_points": 3,
-    "halfway_points": 3,
+    "peripheral_points": 6,
+    "halfway_points": 6,
     "calibration_factors": 6,
-    "probe_radius": 85,
+    "probe_radius": 120,
     "mesh": {
         "x_min": 15,
         "x_max": 215,
@@ -258,8 +288,8 @@
         "mac_address": "",
         "name": "My Printer",
         "password": "",
-        "ssid": "",
-        "ssid_password": "",
+        "ssid": "callicoocoon",
+        "ssid_password": "*****",
         "dhcp": true,
         "ip": "192.168.1.20",
         "netmask": "255.255.255.0",
