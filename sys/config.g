@@ -9,7 +9,7 @@ M111 S0                                     ; Debug off
 ; General preferences
 G90                                         ; send absolute coordinates...
 M83                                         ; ...but relative extruder moves
-M550 P"Kossel VS2500"                       ; set printer name
+M550 P"Kossel VS250"                       ; set printer name
 M665 R170.992 L288.28 B120 H226.426         ; Set delta radius, diagonal rod length, printable radius and homed height
 M666 X0 Y0 Z0                               ; put your endstop adjustments here, or let auto calibration find them
 
@@ -41,8 +41,9 @@ M574 X2 Y2 Z2 S1                            ; set active high endstops
 M574 E0 S0                                  ; set FSR controller active low
 
 ; Z-Probe
-M558 P5 R0.4 H5 F1200 T600 I1               ; set Z probe type to effector and the dive height + speeds
-G31 P500 X0 Y0 Z-.20                        ; set Z probe trigger value, offset and trigger height
+M558 P5 R0.4 H5 F1200 T6000 I1              ; set Z probe type to effector and the dive height + speeds
+M558 H30                                    ;*** Remove this line after delta calibration has been done and new delta parameters have been saved
+G31 P500 X0 Y0 Z-.20                           ; set Z probe trigger value, offset and trigger height
 M557 R85 S20                                ; define mesh grid
 
 ; Heaters
@@ -52,11 +53,15 @@ M305 P1 T100000 B4388 R4700 H-97 L54                 ; set thermistor + ADC para
 M143 H1 S280                                ; set temperature limit for heater 1 to 280C
 
 ; Fans
+M106 P1 S0.5 I0 H1 T45                   ; set fan 1 value, PWM signal inversion and frequency. Thermostatic control is turned on
 
 ; Tools
-M563 P0 D0 H1                               ; define tool 0
-G10 P0 S0 R0                                ; set tool 0 axis offsets
+M563 P0 D0 H1 F0                            ; define tool 0
+G10 P0 X0 Y0 Z0                             ; set tool 0 axis offsets
 G10 P0 R0 S0                                ; set initial tool 0 active and standby temperatures to 0C
 
 ; Custom settings are not defined
+
+; Miscellaneous
+T0                                          ; select first tool
 
