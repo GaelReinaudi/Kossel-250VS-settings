@@ -29,6 +29,6 @@ G30 P12 X0 Y0 Z-99999 S6
 ; Use S-1 for measurements only, without calculations. Use S4 for endstop heights and Z-height only. Use S6 for full 6 factors
 ; If your Z probe has significantly different trigger heights depending on XY position, adjust the H parameters in the G30 commands accordingly. The value of each H parameter should be (trigger height at that XY position) - (trigger height at centre of bed)
 
-G29 ; mesh compensation no homing should be done after that (because it would compensate for homing inaccuracy !
+;G29 ; mesh compensation no homing should be done after that (because it would compensate for homing inaccuracy !
 
 G1 X0 Y0 Z200 F5000          ; get the head out of the way of the bed

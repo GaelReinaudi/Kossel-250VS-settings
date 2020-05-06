@@ -11,7 +11,7 @@ G90                                         ; send absolute coordinates...
 M83                                         ; ...but relative extruder moves
 M550 P"Kossel VS250"                        ; set printer name
 M665 R170.992 L288.28 B120 H226.426         ; Set delta radius, diagonal rod length, printable radius and homed height
-M666 X0 Y0 Z0                               ; put your endstop adjustments here, or let auto calibration find them
+M666 X0.30 Y0.32 Z-0.63                               ; put your endstop adjustments here, or let auto calibration find them
 
 ; Network
 M552 S1                                     ; enable network
@@ -41,9 +41,9 @@ M574 X2 Y2 Z2 S1                            ; set active high endstops
 M574 E0 S0                                  ; set FSR controller active low
 
 ; Z-Probe
-M558 P5 R0.4 H0.5 F1200 T6000 I1              ; set Z probe type to effector and the dive height + speeds
-G31 P500 X0 Y0 Z-.20                        ; set Z probe trigger value, offset and trigger height
-M557 R105 S20                                ; define mesh grid
+M558 P5 R0.4 H1.0 T6000 I1 A2               ; set Z probe type to effector and the dive height + speeds
+G31 P500 X0 Y0 Z-0.2                        ; set Z probe trigger value, offset and trigger height
+M557 R105 S20                               ; define mesh grid
 
 ; Heaters
 M305 P0 T100000 B4250 R4700 H0 L0                 ; set thermistor + ADC parameters for heater 0
